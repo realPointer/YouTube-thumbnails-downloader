@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  thumbnails:
+    container_name: thumbnails
+    build: .
+    env_file:
+      - .env
+    ports:
+      - ${GRPC_PORT}:${GRPC_PORT}
+    restart: unless-stopped

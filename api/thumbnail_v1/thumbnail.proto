@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package thumbnail;
+
+option go_package = "github.com/realPointer/YouTube-thumbnails-downloader/pkg/thumbnail_v1;thumbnail_v1";
+
+service ThumbnailService {
+  rpc DownloadThumbnail(DownloadThumbnailRequest) returns (DownloadThumbnailResponse) {}
+}
+
+message DownloadThumbnailRequest {
+  string video_url = 1;
+}
+
+message DownloadThumbnailResponse {
+  bytes thumbnail_data = 1;
+}
