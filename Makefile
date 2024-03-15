@@ -12,6 +12,9 @@ compose-down: ### Down docker-compose
 	docker-compose down --remove-orphans
 .PHONY: compose-down
 
+docker-rm-volume:
+	docker volume rm youtube-thumbnails-downloader_thumbnails
+
 install-all: ### Install all dependencies and tools
 	make install-deps
 	make install-linter

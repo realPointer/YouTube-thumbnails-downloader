@@ -9,9 +9,10 @@ import (
 
 type (
 	Config struct {
-		App  `yaml:"app"`
-		GRPC `yaml:"grpc"`
-		Log  `yaml:"logger"`
+		App     `yaml:"app"`
+		GRPC    `yaml:"grpc"`
+		Log     `yaml:"logger"`
+		YouTube `yaml:"youtube"`
 	}
 
 	App struct {
@@ -25,6 +26,10 @@ type (
 
 	Log struct {
 		Level string `env-required:"true" yaml:"log_level"   env:"LOG_LEVEL"`
+	}
+
+	YouTube struct {
+		APIKey string `env-required:"true" env:"YOUTUBE_API_KEY"`
 	}
 )
 

@@ -8,4 +8,9 @@ services:
       - .env
     ports:
       - ${GRPC_PORT}:${GRPC_PORT}
+    volumes:
+      - thumbnails:/data
     restart: unless-stopped
+
+volumes:
+  thumbnails:

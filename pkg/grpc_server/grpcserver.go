@@ -2,7 +2,6 @@ package grpcserver
 
 import (
 	"fmt"
-	"log"
 	"net"
 
 	pb "github.com/realPointer/YouTube-thumbnails-downloader/pkg/thumbnail_v1"
@@ -15,7 +14,6 @@ const (
 )
 
 type Server struct {
-	pb.UnimplementedThumbnailServiceServer
 	GrpcServer *grpc.Server
 	port       int
 }
@@ -39,7 +37,6 @@ func (s *Server) Start(thumbnailService pb.ThumbnailServiceServer) error {
 		return fmt.Errorf("failed to listen: %w", err)
 	}
 
-	log.Printf("server listening at: %v", s.port)
 	reflection.Register(s.GrpcServer)
 	pb.RegisterThumbnailServiceServer(s.GrpcServer, thumbnailService)
 
