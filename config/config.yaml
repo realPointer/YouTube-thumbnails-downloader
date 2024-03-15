@@ -1,0 +1,6 @@
+app:
+  name: "thumbnail-downloader"
+  version: '1.0.0'
+
+logger:
+  log_level: 'debug'

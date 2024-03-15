@@ -1,7 +1,9 @@
 package main
 
-import "github.com/fatih/color"
+import (
+	"github.com/realPointer/YouTube-thumbnails-downloader/internal/app"
+)
 
 func main() {
-	color.Cyan("Hello, World!")
+	app.Run()
 }
